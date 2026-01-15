@@ -13,6 +13,7 @@ interface ServiceDetailProps {
 
 export default function ServiceDetail({ slug }: ServiceDetailProps) {
     const service = getServiceBySlug(slug);
+    const { openDialog } = useBooking();
 
     if (!service) {
         return (
