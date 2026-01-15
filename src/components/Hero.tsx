@@ -64,7 +64,7 @@ export default function Hero() {
                 size="lg"
                 className="bg-[#F5F0E8] hover:bg-[#E8DDD0] text-[#3A2E1F] font-semibold px-8 py-6 rounded-lg transition-all duration-300 hover:shadow-lg shadow-md"
               >
-                <a href="/services" className="w-full h-full block text-inherit no-underline">View Services</a>
+                <a href="/services" className="w-full h-full block mb-4 text-inherit no-underline">View Services</a>
               </Button>
             </div>
 
