@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Award, Users, Clock, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 const features = [
   {
@@ -29,7 +30,7 @@ const features = [
 
 export default function About() {
   return (
-    <section id="about" className="py-24 bg-[#0d0d0d] relative overflow-hidden">
+    <section id="about" className="py-24 bg-[#F5F0E8] relative overflow-hidden">
       {/* Decorative background */}
       <div className="absolute inset-0 bg-pattern" />
       
@@ -45,28 +46,34 @@ export default function About() {
           >
             <div className="relative">
               {/* Main visual element */}
-              <div className="aspect-[4/5] bg-gradient-to-br from-[#1a1a1a] to-[#111111] border border-[#262626] rounded-sm overflow-hidden relative">
-                {/* Decorative pattern inside */}
-                <div className="absolute inset-0 diagonal-lines opacity-30" />
+              <div className="aspect-[4/5] relative rounded-sm overflow-hidden shadow-lg">
+                <Image
+                  src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=800&q=80"
+                  alt="Salon Interior"
+                  fill
+                  className="object-cover"
+                />
+                {/* Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-br from-[#8B6F47]/20 to-transparent" />
                 
-                {/* Gold accent squares */}
-                <div className="absolute top-8 left-8 w-24 h-24 border-2 border-gold/30" />
-                <div className="absolute top-12 left-12 w-24 h-24 bg-gold/10" />
+                {/* Wooden accent squares */}
+                <div className="absolute top-8 left-8 w-24 h-24 border-2 border-[#8B6F47]/30" />
+                <div className="absolute top-12 left-12 w-24 h-24 bg-[#8B6F47]/10" />
                 
                 {/* Center content */}
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="text-center">
-                    <div className="text-4xl sm:text-6xl md:text-8xl font-bold text-gold/10 font-[family-name:var(--font-heading)] break-words px-4">
+                    <div className="text-4xl sm:text-6xl md:text-8xl font-bold text-white/20 font-[family-name:var(--font-heading)] break-words px-4 drop-shadow-lg">
                       Claude Monet
                     </div>
-                    <div className="text-sm tracking-[0.5em] text-gold/50 uppercase mt-2">
+                    <div className="text-sm tracking-[0.5em] text-white/40 uppercase mt-2">
                       Since 2010
                     </div>
                   </div>
                 </div>
 
                 {/* Bottom accent */}
-                <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-gold via-gold-light to-gold" />
+                <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-[#8B6F47] via-[#A0826D] to-[#8B6F47]" />
               </div>
 
               {/* Floating stats card */}
@@ -75,7 +82,7 @@ export default function About() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.3 }}
-                className="absolute -bottom-8 -right-8 bg-gold text-black p-6 rounded-sm shadow-2xl shadow-gold/20"
+                className="absolute -bottom-8 -right-8 bg-[#8B6F47] text-white p-6 rounded-sm shadow-2xl shadow-[#8B6F47]/20"
               >
                 <div className="text-4xl font-bold font-[family-name:var(--font-heading)]">15+</div>
                 <div className="text-sm font-medium">Years of Excellence</div>
@@ -90,7 +97,7 @@ export default function About() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <span className="inline-block text-gold text-sm font-medium tracking-[0.3em] uppercase mb-4">
+            <span className="inline-block text-[#8B6F47] text-sm font-medium tracking-[0.3em] uppercase mb-4">
               About Us
             </span>
             <h2 className="text-4xl md:text-5xl font-bold mb-6 font-[family-name:var(--font-heading)]">
@@ -120,7 +127,7 @@ export default function About() {
                   className="flex items-start gap-4"
                 >
                   <div className="w-10 h-10 bg-gold/10 rounded-sm flex items-center justify-center flex-shrink-0">
-                    <feature.icon className="w-5 h-5 text-gold" />
+                    <feature.icon className="w-5 h-5 text-[#8B6F47]" />
                   </div>
                   <div>
                     <h4 className="font-semibold text-foreground mb-1 font-[family-name:var(--font-heading)]">
@@ -134,7 +141,7 @@ export default function About() {
 
             <Button
               size="lg"
-              className="bg-gold hover:bg-gold-light text-black font-semibold px-8 py-6 rounded-none transition-all duration-300 hover:shadow-lg hover:shadow-gold/20"
+                className="bg-[#8B6F47] hover:bg-[#A0826D] text-white font-semibold px-8 py-6 rounded-none transition-all duration-300 hover:shadow-lg hover:shadow-[#8B6F47]/20"
             >
               Meet Our Team
             </Button>

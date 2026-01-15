@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Expand } from "lucide-react";
+import Image from "next/image";
 
 const galleryItems = [
     { id: 1, category: "Hair", size: "large" },
@@ -14,10 +15,10 @@ const galleryItems = [
 
 export default function Gallery() {
     return (
-        <section id="gallery" className="py-24 bg-[#0d0d0d] relative overflow-hidden">
-            {/* Decorative elements */}
-            <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent" />
-            <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent" />
+    <section id="gallery" className="py-24 bg-[#F5F0E8] relative overflow-hidden">
+      {/* Decorative elements */}
+      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#8B6F47]/30 to-transparent" />
+      <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#8B6F47]/30 to-transparent" />
 
             <div className="container mx-auto px-6 relative z-10">
                 {/* Section Header */}
@@ -28,9 +29,9 @@ export default function Gallery() {
                     transition={{ duration: 0.6 }}
                     className="text-center mb-16"
                 >
-                    <span className="inline-block text-gold text-sm font-medium tracking-[0.3em] uppercase mb-4">
-                        Our Work
-                    </span>
+          <span className="inline-block text-[#8B6F47] text-sm font-medium tracking-[0.3em] uppercase mb-4">
+            Our Work
+          </span>
                     <h2 className="text-4xl md:text-5xl font-bold mb-6 font-[family-name:var(--font-heading)]">
                         <span className="text-foreground">Inspiration </span>
                         <span className="text-gold-gradient">Gallery</span>
@@ -57,36 +58,34 @@ export default function Gallery() {
                                     : "aspect-square"
                                 }`}
                         >
-                            {/* Placeholder background */}
-                            <div className="absolute inset-0 bg-gradient-to-br from-[#1a1a1a] to-[#111111]">
-                                {/* Decorative pattern */}
-                                <div className="absolute inset-0 diagonal-lines opacity-20" />
-
-                                {/* Category text */}
-                                <div className="absolute inset-0 flex items-center justify-center">
-                                    <span className="text-4xl md:text-6xl font-bold text-gold/10 font-[family-name:var(--font-heading)]">
-                                        {item.category}
-                                    </span>
-                                </div>
+                            {/* Image from Unsplash */}
+                            <div className="absolute inset-0">
+                                <Image
+                                    src={`https://images.unsplash.com/photo-${item.id === 1 ? '1522337360788-8b13dee7a37e' : item.id === 2 ? '1560066984-138dadb4c035' : item.id === 3 ? '1522337360788-8b13dee7a37e' : item.id === 4 ? '1522337360788-8b13dee7a37e' : '1522337360788-8b13dee7a37e'}?w=800&q=80`}
+                                    alt={item.category}
+                                    fill
+                                    className="object-cover"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-br from-[#8B6F47]/10 to-transparent" />
                             </div>
 
                             {/* Hover overlay */}
-                            <div className="absolute inset-0 bg-gold/0 group-hover:bg-gold/20 transition-colors duration-500" />
+                            <div className="absolute inset-0 bg-[#8B6F47]/0 group-hover:bg-[#8B6F47]/20 transition-colors duration-500" />
 
                             {/* Hover content */}
                             <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                <div className="w-14 h-14 bg-gold rounded-full flex items-center justify-center transform scale-0 group-hover:scale-100 transition-transform duration-300">
-                                    <Expand className="w-6 h-6 text-black" />
+                                <div className="w-14 h-14 bg-[#8B6F47] rounded-full flex items-center justify-center transform scale-0 group-hover:scale-100 transition-transform duration-300">
+                                    <Expand className="w-6 h-6 text-white" />
                                 </div>
                             </div>
 
                             {/* Category badge */}
-                            <div className="absolute bottom-4 left-4 bg-black/60 backdrop-blur-sm px-3 py-1.5 rounded-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                <span className="text-sm text-gold font-medium">{item.category}</span>
+                            <div className="absolute bottom-4 left-4 bg-white/80 backdrop-blur-sm px-3 py-1.5 rounded-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <span className="text-sm text-[#8B6F47] font-medium">{item.category}</span>
                             </div>
 
                             {/* Border on hover */}
-                            <div className="absolute inset-0 border-2 border-transparent group-hover:border-gold/50 transition-colors duration-300 rounded-sm" />
+                            <div className="absolute inset-0 border-2 border-transparent group-hover:border-[#8B6F47]/50 transition-colors duration-300 rounded-sm" />
                         </motion.div>
                     ))}
                 </div>
@@ -99,9 +98,9 @@ export default function Gallery() {
                     transition={{ delay: 0.4 }}
                     className="text-center mt-12"
                 >
-                    <button className="text-gold font-medium hover:text-gold-light transition-colors duration-300 animated-underline">
-                        View Full Gallery →
-                    </button>
+          <button className="text-[#8B6F47] font-medium hover:text-[#A0826D] transition-colors duration-300 animated-underline">
+            View Full Gallery →
+          </button>
                 </motion.div>
             </div>
         </section>

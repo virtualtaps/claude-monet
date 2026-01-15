@@ -77,6 +77,87 @@ const blogPosts = [
       <p>During the treatment, you may experience a slight tingling sensation. Afterward, your skin may be slightly red and sensitive. It's crucial to follow your esthetician's aftercare instructions and always wear sunscreen.</p>
     `,
     },
+    {
+        slug: "lash-extension-care",
+        title: "Complete Guide to Lash Extension Care and Maintenance",
+        excerpt: "Everything you need to know about keeping your lash extensions looking perfect for weeks.",
+        category: "Lashes",
+        date: "Nov 28, 2025",
+        readTime: "4 min read",
+        content: `
+      <p>Lash extensions are a fantastic way to enhance your natural beauty and wake up with perfect lashes every day. However, proper care is essential to maintain their appearance and longevity.</p>
+      
+      <h2>First 24-48 Hours</h2>
+      <p>After getting your lash extensions, avoid getting them wet for the first 24-48 hours. This allows the adhesive to fully cure and ensures your extensions stay in place.</p>
+      
+      <h2>Daily Care Routine</h2>
+      <p>Gently brush your lashes daily with a clean spoolie brush to keep them separated and looking their best. Avoid using oil-based products near your eyes, as they can break down the adhesive.</p>
+      
+      <h2>Cleaning Your Extensions</h2>
+      <p>Use a lash extension-safe cleanser to gently clean your lashes. Avoid rubbing or pulling on the extensions, and pat them dry with a clean towel.</p>
+      
+      <h2>Sleeping Tips</h2>
+      <p>Sleep on your back or side to avoid crushing your lashes. Consider using a silk or satin pillowcase to reduce friction.</p>
+      
+      <h2>When to Get a Fill</h2>
+      <p>Most lash extensions last 2-4 weeks before needing a fill. Schedule regular appointments to maintain your full, beautiful lashes.</p>
+    `,
+    },
+    {
+        slug: "russian-manicure-benefits",
+        title: "Why Russian Manicure is Taking Over the Beauty World",
+        excerpt: "Discover the secrets behind this precision technique and why it's becoming the go-to choice for nail enthusiasts.",
+        category: "Nails",
+        date: "Nov 20, 2025",
+        readTime: "5 min read",
+        content: `
+      <p>The Russian manicure has become one of the most sought-after nail treatments in recent years. This precision technique offers superior results and longer-lasting polish.</p>
+      
+      <h2>What is a Russian Manicure?</h2>
+      <p>Unlike traditional manicures, the Russian technique uses an electric file to precisely remove cuticles and shape the nails. This method creates a cleaner, more defined nail bed and allows polish to last significantly longer.</p>
+      
+      <h2>Key Benefits</h2>
+      <p>Russian manicures provide several advantages: longer-lasting polish (up to 3-4 weeks), cleaner nail beds, more precise shaping, and reduced risk of cuticle damage. The technique also promotes healthier nail growth.</p>
+      
+      <h2>The Process</h2>
+      <p>During a Russian manicure, your technician uses specialized bits on an electric file to gently remove dead skin and cuticles. The process is precise and requires professional training to ensure safety and optimal results.</p>
+      
+      <h2>Who Should Get One?</h2>
+      <p>Russian manicures are perfect for anyone who wants long-lasting, flawless nails. They're especially beneficial for those with challenging cuticles or who want a more polished, professional look.</p>
+      
+      <h2>Aftercare</h2>
+      <p>To maintain your Russian manicure, keep your nails moisturized and avoid picking at your cuticles. Regular appointments every 3-4 weeks will keep your nails looking perfect.</p>
+    `,
+    },
+    {
+        slug: "winter-hair-care",
+        title: "Essential Winter Hair Care Tips for Healthy, Shiny Locks",
+        excerpt: "Protect your hair from winter damage with these expert tips and product recommendations.",
+        category: "Hair Care",
+        date: "Nov 15, 2025",
+        readTime: "6 min read",
+        content: `
+      <p>Winter weather can be harsh on your hair, causing dryness, breakage, and static. With the right care routine, you can keep your locks healthy and shiny all season long.</p>
+      
+      <h2>Moisturize Regularly</h2>
+      <p>Cold, dry air strips moisture from your hair. Use a deep conditioning treatment at least once a week to replenish lost hydration. Look for products with natural oils like argan, coconut, or jojoba.</p>
+      
+      <h2>Reduce Heat Styling</h2>
+      <p>Limit your use of hot tools during winter months. When you do style with heat, always use a heat protectant spray. Consider air-drying your hair more often to prevent additional damage.</p>
+      
+      <h2>Protect from the Elements</h2>
+      <p>Wear a hat or scarf when going outside to protect your hair from cold winds and dry air. Silk or satin-lined hats are best as they reduce friction and prevent breakage.</p>
+      
+      <h2>Adjust Your Shampoo Routine</h2>
+      <p>You may need to wash your hair less frequently in winter, as your scalp produces less oil. When you do shampoo, use a moisturizing formula and follow with a rich conditioner.</p>
+      
+      <h2>Combat Static</h2>
+      <p>Static electricity is common in winter. Use a leave-in conditioner or anti-static spray. A small amount of hair oil on the ends can also help tame flyaways.</p>
+      
+      <h2>Trim Regularly</h2>
+      <p>Regular trims every 6-8 weeks will prevent split ends from traveling up the hair shaft, keeping your hair healthy and strong throughout the winter months.</p>
+    `,
+    },
 ];
 
 type Props = {

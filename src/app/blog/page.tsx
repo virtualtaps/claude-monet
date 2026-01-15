@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { Calendar, Clock, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 const blogPosts = [
     {
@@ -73,12 +74,12 @@ export default function BlogPage() {
     const regularPosts = blogPosts.filter((post) => !post.featured);
 
     return (
-        <div className="min-h-screen bg-[#0a0a0a]">
+        <div className="min-h-screen bg-[#FAF8F3]">
             {/* Hero Section */}
-            <section className="pt-32 pb-16 bg-gradient-to-b from-[#0a0a0a] to-[#0d0d0d] relative overflow-hidden">
+            <section className="pt-32 pb-16 bg-gradient-to-b from-[#FAF8F3] to-[#F5F0E8] relative overflow-hidden">
                 <div className="absolute inset-0">
-                    <div className="absolute top-20 left-10 w-72 h-72 bg-gold/5 rounded-full blur-3xl" />
-                    <div className="absolute bottom-20 right-10 w-96 h-96 bg-gold/5 rounded-full blur-3xl" />
+                    <div className="absolute top-20 left-10 w-72 h-72 bg-[#8B6F47]/5 rounded-full blur-3xl" />
+                    <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#A0826D]/5 rounded-full blur-3xl" />
                 </div>
 
                 <div className="container mx-auto px-6 relative z-10">
@@ -88,7 +89,7 @@ export default function BlogPage() {
                         transition={{ duration: 0.6 }}
                         className="text-center max-w-3xl mx-auto"
                     >
-                        <span className="inline-block text-gold text-sm font-medium tracking-[0.3em] uppercase mb-4">
+                        <span className="inline-block text-[#8B6F47] text-sm font-medium tracking-[0.3em] uppercase mb-4">
                             Beauty Tips
                         </span>
                         <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 font-[family-name:var(--font-heading)]">
@@ -106,7 +107,7 @@ export default function BlogPage() {
             {/* Featured Post */}
             {featuredPost && (
                 <section className="py-16 relative overflow-hidden">
-                    <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent" />
+                    <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#8B6F47]/30 to-transparent" />
 
                     <div className="container mx-auto px-6 relative z-10">
                         <motion.div
@@ -115,50 +116,51 @@ export default function BlogPage() {
                             viewport={{ once: true }}
                             transition={{ duration: 0.6 }}
                         >
-                            <span className="text-gold text-sm font-medium tracking-[0.2em] uppercase mb-4 block">
-                                Featured Post
-                            </span>
-                            <Link href={`/blog/${featuredPost.slug}`}>
-                                <div className="group bg-[#111111] border border-[#1a1a1a] rounded-sm overflow-hidden hover:border-gold/30 transition-all duration-500">
+                    <span className="text-[#8B6F47] text-sm font-medium tracking-[0.2em] uppercase mb-4 block">
+                        Featured Post
+                    </span>
+                    <Link href={`/blog/${featuredPost.slug}`}>
+                        <div className="group bg-white border border-[#E8DDD0] rounded-sm overflow-hidden hover:border-[#8B6F47]/30 transition-all duration-500 shadow-sm hover:shadow-md">
                                     <div className="grid md:grid-cols-2 gap-0">
-                                        {/* Image placeholder */}
-                                        <div className="aspect-[16/10] bg-gradient-to-br from-[#1a1a1a] to-[#0d0d0d] relative overflow-hidden">
-                                            <div className="absolute inset-0 diagonal-lines opacity-20" />
-                                            <div className="absolute inset-0 flex items-center justify-center">
-                                                <span className="text-4xl font-bold text-gold/10 font-[family-name:var(--font-heading)]">
-                                                    {featuredPost.category}
-                                                </span>
-                                            </div>
-                                            <div className="absolute top-4 left-4 bg-gold text-black text-xs font-bold px-3 py-1 rounded-sm">
-                                                {featuredPost.category}
-                                            </div>
-                                            <div className="absolute inset-0 bg-gold/0 group-hover:bg-gold/10 transition-colors duration-500" />
-                                        </div>
+                            {/* Image */}
+                            <div className="aspect-[16/10] relative overflow-hidden">
+                                <Image
+                                    src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=1200&q=80"
+                                    alt={featuredPost.title}
+                                    fill
+                                    className="object-cover"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-br from-[#8B6F47]/20 to-transparent" />
+                                <div className="absolute top-4 left-4 bg-[#8B6F47] text-white text-xs font-bold px-3 py-1 rounded-sm">
+                                    {featuredPost.category}
+                                </div>
+                                <div className="absolute inset-0 bg-[#8B6F47]/0 group-hover:bg-[#8B6F47]/10 transition-colors duration-500" />
+                            </div>
 
                                         {/* Content */}
                                         <div className="p-8 md:p-12 flex flex-col justify-center">
-                                            <div className="flex items-center gap-4 text-sm text-muted-foreground mb-4">
-                                                <div className="flex items-center gap-1.5">
-                                                    <Calendar className="w-4 h-4 text-gold" />
-                                                    <span>{featuredPost.date}</span>
-                                                </div>
-                                                <div className="flex items-center gap-1.5">
-                                                    <Clock className="w-4 h-4 text-gold" />
-                                                    <span>{featuredPost.readTime}</span>
-                                                </div>
-                                            </div>
+                                <div className="flex items-center gap-4 text-sm text-muted-foreground mb-4">
+                                    <div className="flex items-center gap-1.5">
+                                        <Calendar className="w-4 h-4 text-[#8B6F47]" />
+                                        <span>{featuredPost.date}</span>
+                                    </div>
+                                    <div className="flex items-center gap-1.5">
+                                        <Clock className="w-4 h-4 text-[#8B6F47]" />
+                                        <span>{featuredPost.readTime}</span>
+                                    </div>
+                                </div>
 
-                                            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground group-hover:text-gold transition-colors duration-300 font-[family-name:var(--font-heading)]">
-                                                {featuredPost.title}
-                                            </h2>
+                                <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground group-hover:text-[#8B6F47] transition-colors duration-300 font-[family-name:var(--font-heading)]">
+                                    {featuredPost.title}
+                                </h2>
 
                                             <p className="text-muted-foreground text-lg leading-relaxed mb-6">
                                                 {featuredPost.excerpt}
                                             </p>
 
                                             <Button
-                                                variant="ghost"
-                                                className="w-fit p-0 h-auto text-gold hover:text-gold-light hover:bg-transparent font-medium group/btn"
+                                    variant="ghost"
+                                    className="w-fit p-0 h-auto text-[#8B6F47] hover:text-[#A0826D] hover:bg-transparent font-medium group/btn"
                                             >
                                                 Read More
                                                 <ArrowRight className="ml-2 w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
@@ -174,7 +176,7 @@ export default function BlogPage() {
 
             {/* Blog Grid */}
             <section className="py-24 relative overflow-hidden">
-                <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent" />
+                <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#8B6F47]/30 to-transparent" />
 
                 <div className="container mx-auto px-6 relative z-10">
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -186,40 +188,41 @@ export default function BlogPage() {
                                 viewport={{ once: true }}
                                 transition={{ delay: index * 0.1, duration: 0.5 }}
                             >
-                                <Link href={`/blog/${post.slug}`}>
-                                    <div className="group bg-[#111111] border border-[#1a1a1a] rounded-sm overflow-hidden hover:border-gold/30 transition-all duration-500 h-full flex flex-col">
-                                        {/* Image placeholder */}
-                                        <div className="aspect-[16/10] bg-gradient-to-br from-[#1a1a1a] to-[#0d0d0d] relative overflow-hidden">
-                                            <div className="absolute inset-0 diagonal-lines opacity-20" />
-                                            <div className="absolute inset-0 flex items-center justify-center">
-                                                <span className="text-3xl font-bold text-gold/10 font-[family-name:var(--font-heading)]">
-                                                    {post.category}
-                                                </span>
-                                            </div>
-                                            <div className="absolute top-4 left-4 bg-gold text-black text-xs font-bold px-3 py-1 rounded-sm">
-                                                {post.category}
-                                            </div>
-                                            <div className="absolute inset-0 bg-gold/0 group-hover:bg-gold/10 transition-colors duration-500" />
-                                        </div>
+                <Link href={`/blog/${post.slug}`}>
+                    <div className="group bg-white border border-[#E8DDD0] rounded-sm overflow-hidden hover:border-[#8B6F47]/30 transition-all duration-500 h-full flex flex-col shadow-sm hover:shadow-md">
+                        {/* Image */}
+                        <div className="aspect-[16/10] relative overflow-hidden">
+                            <Image
+                                src={`https://images.unsplash.com/photo-${post.id === 2 ? '1522337360788-8b13dee7a37e' : post.id === 3 ? '1522337360788-8b13dee7a37e' : post.id === 4 ? '1560066984-138dadb4c035' : post.id === 5 ? '1522337360788-8b13dee7a37e' : '1522337360788-8b13dee7a37e'}?w=800&q=80`}
+                                alt={post.title}
+                                fill
+                                className="object-cover"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-br from-[#8B6F47]/20 to-transparent" />
+                            <div className="absolute top-4 left-4 bg-[#8B6F47] text-white text-xs font-bold px-3 py-1 rounded-sm">
+                                {post.category}
+                            </div>
+                            <div className="absolute inset-0 bg-[#8B6F47]/0 group-hover:bg-[#8B6F47]/10 transition-colors duration-500" />
+                        </div>
 
                                         {/* Content */}
                                         <div className="p-6 flex flex-col flex-grow">
                                             {/* Meta */}
-                                            <div className="flex items-center gap-4 text-sm text-muted-foreground mb-4">
-                                                <div className="flex items-center gap-1.5">
-                                                    <Calendar className="w-4 h-4 text-gold" />
-                                                    <span>{post.date}</span>
-                                                </div>
-                                                <div className="flex items-center gap-1.5">
-                                                    <Clock className="w-4 h-4 text-gold" />
-                                                    <span>{post.readTime}</span>
-                                                </div>
-                                            </div>
+                                <div className="flex items-center gap-4 text-sm text-muted-foreground mb-4">
+                                    <div className="flex items-center gap-1.5">
+                                        <Calendar className="w-4 h-4 text-[#8B6F47]" />
+                                        <span>{post.date}</span>
+                                    </div>
+                                    <div className="flex items-center gap-1.5">
+                                        <Clock className="w-4 h-4 text-[#8B6F47]" />
+                                        <span>{post.readTime}</span>
+                                    </div>
+                                </div>
 
-                                            {/* Title */}
-                                            <h3 className="text-xl font-semibold text-foreground mb-3 group-hover:text-gold transition-colors duration-300 font-[family-name:var(--font-heading)] line-clamp-2">
-                                                {post.title}
-                                            </h3>
+                                {/* Title */}
+                                <h3 className="text-xl font-semibold text-foreground mb-3 group-hover:text-[#8B6F47] transition-colors duration-300 font-[family-name:var(--font-heading)] line-clamp-2">
+                                    {post.title}
+                                </h3>
 
                                             {/* Excerpt */}
                                             <p className="text-muted-foreground text-sm leading-relaxed mb-4 flex-grow line-clamp-3">
@@ -228,16 +231,16 @@ export default function BlogPage() {
 
                                             {/* Read More */}
                                             <Button
-                                                variant="ghost"
-                                                className="w-fit p-0 h-auto text-gold hover:text-gold-light hover:bg-transparent font-medium group/btn mt-auto"
-                                            >
-                                                Read More
-                                                <ArrowRight className="ml-2 w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-                                            </Button>
-                                        </div>
+                                    variant="ghost"
+                                    className="w-fit p-0 h-auto text-[#8B6F47] hover:text-[#A0826D] hover:bg-transparent font-medium group/btn mt-auto"
+                                >
+                                    Read More
+                                    <ArrowRight className="ml-2 w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                                </Button>
+                            </div>
 
-                                        {/* Bottom accent line */}
-                                        <div className="h-0.5 w-0 bg-gold group-hover:w-full transition-all duration-500" />
+                            {/* Bottom accent line */}
+                            <div className="h-0.5 w-0 bg-[#8B6F47] group-hover:w-full transition-all duration-500" />
                                     </div>
                                 </Link>
                             </motion.article>

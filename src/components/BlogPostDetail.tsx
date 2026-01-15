@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { ArrowLeft, Calendar, Clock, Share2 } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 interface BlogPost {
   slug: string;
@@ -21,14 +22,9 @@ interface BlogPostDetailProps {
 
 export default function BlogPostDetail({ post }: BlogPostDetailProps) {
   return (
-    <div className="min-h-screen bg-[#0a0a0a]">
+    <div className="min-h-screen bg-[#FAF8F3]">
       {/* Hero Section */}
-      <section className="pt-32 pb-16 bg-gradient-to-b from-[#0a0a0a] to-[#0d0d0d] relative overflow-hidden">
-        <div className="absolute inset-0">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-gold/5 rounded-full blur-3xl" />
-          <div className="absolute bottom-20 right-10 w-96 h-96 bg-gold/5 rounded-full blur-3xl" />
-        </div>
-
+      <section className="pt-32 pb-16 relative overflow-hidden">
         <div className="container mx-auto px-6 relative z-10 max-w-4xl">
           {/* Back Button */}
           <motion.div
@@ -40,7 +36,7 @@ export default function BlogPostDetail({ post }: BlogPostDetailProps) {
             <Link href="/blog">
               <Button
                 variant="ghost"
-                className="text-muted-foreground hover:text-gold transition-colors"
+                className="text-muted-foreground hover:text-[#8B6F47] transition-colors"
               >
                 <ArrowLeft className="w-4 h-4 mr-2" />
                 Back to Blog
@@ -48,35 +44,46 @@ export default function BlogPostDetail({ post }: BlogPostDetailProps) {
             </Link>
           </motion.div>
 
+          {/* Main Content Card - Dark Brown/Black */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
+            className="bg-[#3A2E1F] rounded-lg p-8 md:p-12 shadow-xl"
           >
-            {/* Category & Meta */}
-            <div className="flex items-center gap-4 mb-6 flex-wrap">
-              <span className="bg-gold text-black text-xs font-bold px-3 py-1 rounded-sm">
+            {/* Category Label - Top Left */}
+            <div className="mb-6">
+              <span className="text-[#A0826D] text-sm font-medium tracking-wide uppercase">
                 {post.category}
               </span>
-              <div className="flex items-center gap-4 text-sm text-muted-foreground">
-                <div className="flex items-center gap-1.5">
-                  <Calendar className="w-4 h-4 text-gold" />
-                  <span>{post.date}</span>
-                </div>
-                <div className="flex items-center gap-1.5">
-                  <Clock className="w-4 h-4 text-gold" />
-                  <span>{post.readTime}</span>
-                </div>
+            </div>
+
+            {/* Category Display - Centered */}
+            <div className="text-center mb-6">
+              <span className="text-[#A0826D] text-2xl md:text-3xl font-semibold font-[family-name:var(--font-heading)]">
+                {post.category}
+              </span>
+            </div>
+
+            {/* Date & Read Time */}
+            <div className="flex items-center justify-center gap-4 text-sm text-[#A0826D] mb-6">
+              <div className="flex items-center gap-1.5">
+                <Calendar className="w-4 h-4" />
+                <span>{post.date}</span>
+              </div>
+              <div className="flex items-center gap-1.5">
+                <Clock className="w-4 h-4" />
+                <span>{post.readTime}</span>
               </div>
             </div>
 
             {/* Title */}
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-[family-name:var(--font-heading)]">
-              <span className="text-foreground">{post.title}</span>
+            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6 text-white font-[family-name:var(--font-heading)] text-center leading-tight">
+              {post.title}
             </h1>
 
             {/* Excerpt */}
-            <p className="text-lg text-muted-foreground leading-relaxed mb-8">
+            <p className="text-base md:text-lg text-[#A0826D] leading-relaxed mb-8 text-center max-w-3xl mx-auto">
               {post.excerpt}
             </p>
           </motion.div>
@@ -85,39 +92,49 @@ export default function BlogPostDetail({ post }: BlogPostDetailProps) {
 
       {/* Content Section */}
       <section className="py-16 relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent" />
-
         <div className="container mx-auto px-6 relative z-10 max-w-4xl">
-          {/* Featured Image Placeholder */}
+          {/* Featured Image in White Card */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="aspect-[16/9] bg-gradient-to-br from-[#1a1a1a] to-[#111111] border border-[#262626] rounded-sm overflow-hidden mb-12 relative"
+            className="bg-white rounded-lg p-4 mb-6 shadow-md"
           >
-            <div className="absolute inset-0 diagonal-lines opacity-20" />
-            <div className="absolute inset-0 flex items-center justify-center">
-              <span className="text-4xl font-bold text-gold/10 font-[family-name:var(--font-heading)]">
-                {post.category}
-              </span>
+            <div className="aspect-[16/9] relative rounded-lg overflow-hidden">
+              <Image
+                src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=1200&q=80"
+                alt={post.title}
+                fill
+                className="object-cover"
+              />
             </div>
           </motion.div>
 
-          {/* Article Content */}
-          <motion.article
+          {/* Article Content in Dark Card */}
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="prose prose-invert prose-lg max-w-none
-              prose-headings:text-foreground prose-headings:font-[family-name:var(--font-heading)]
-              prose-p:text-muted-foreground prose-p:leading-relaxed
-              prose-strong:text-foreground
-              prose-a:text-gold prose-a:no-underline hover:prose-a:underline
-              prose-h2:text-2xl prose-h2:font-bold prose-h2:mt-12 prose-h2:mb-6
-              prose-h2:text-gold"
-            dangerouslySetInnerHTML={{ __html: post.content }}
-          />
+            className="bg-[#3A2E1F] rounded-lg p-8 md:p-12 shadow-xl"
+          >
+            <article
+              className="prose prose-lg prose-invert max-w-none
+                prose-headings:text-white prose-headings:font-[family-name:var(--font-heading)]
+                prose-p:text-[#A0826D] prose-p:leading-relaxed prose-p:text-base prose-p:mb-6 prose-p:text-opacity-100
+                prose-strong:text-white prose-strong:font-semibold
+                prose-a:text-[#A0826D] prose-a:no-underline hover:prose-a:underline
+                prose-h2:text-2xl prose-h2:font-bold prose-h2:mt-12 prose-h2:mb-6 prose-h2:text-white prose-h2:font-[family-name:var(--font-heading)]
+                prose-h3:text-xl prose-h3:font-semibold prose-h3:mt-8 prose-h3:mb-4 prose-h3:text-white prose-h3:font-[family-name:var(--font-heading)]
+                prose-ul:text-[#A0826D] prose-ol:text-[#A0826D] prose-ul:my-6 prose-ol:my-6
+                prose-li:text-[#A0826D] prose-li:mb-2
+                prose-blockquote:text-[#A0826D] prose-blockquote:border-l-[#A0826D]
+                prose-code:text-white prose-code:bg-[#6B5D4F] prose-code:px-1 prose-code:py-0.5 prose-code:rounded
+                prose-img:rounded-lg prose-img:shadow-lg prose-img:my-8"
+              style={{ color: '#A0826D' }}
+              dangerouslySetInnerHTML={{ __html: post.content }}
+            />
+          </motion.div>
 
           {/* Share Section */}
           <motion.div
@@ -125,14 +142,14 @@ export default function BlogPostDetail({ post }: BlogPostDetailProps) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.4 }}
-            className="mt-12 pt-8 border-t border-[#1a1a1a]"
+            className="mt-12 pt-8 border-t border-[#E8DDD0]"
           >
             <div className="flex items-center gap-4">
               <span className="text-muted-foreground">Share this post:</span>
               <Button
                 variant="outline"
                 size="sm"
-                className="border-gold/30 text-gold hover:bg-gold/10"
+                className="border-[#8B6F47]/30 text-[#8B6F47] hover:bg-[#8B6F47]/10"
               >
                 <Share2 className="w-4 h-4 mr-2" />
                 Share
@@ -143,8 +160,8 @@ export default function BlogPostDetail({ post }: BlogPostDetailProps) {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 bg-[#0d0d0d] relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent" />
+      <section className="py-24 bg-[#F5F0E8] relative overflow-hidden">
+        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#8B6F47]/30 to-transparent" />
 
         <div className="container mx-auto px-6">
           <motion.div
@@ -164,7 +181,7 @@ export default function BlogPostDetail({ post }: BlogPostDetailProps) {
               <Link href="/#contact">
                 <Button
                   size="lg"
-                  className="bg-gold hover:bg-gold-light text-black font-semibold px-10 py-6 rounded-none transition-all duration-300 hover:shadow-lg hover:shadow-gold/20"
+                  className="bg-[#8B6F47] hover:bg-[#A0826D] text-white font-semibold px-10 py-6 rounded-none transition-all duration-300 hover:shadow-lg hover:shadow-[#8B6F47]/20"
                 >
                   Book Appointment
                 </Button>
@@ -173,7 +190,7 @@ export default function BlogPostDetail({ post }: BlogPostDetailProps) {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="border-gold/30 text-gold hover:bg-gold/10 px-10 py-6 rounded-none transition-all duration-300"
+                  className="border-[#8B6F47]/30 text-[#8B6F47] hover:bg-[#8B6F47]/10 px-10 py-6 rounded-none transition-all duration-300"
                 >
                   Read More Articles
                 </Button>

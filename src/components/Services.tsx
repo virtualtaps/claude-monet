@@ -29,13 +29,13 @@ const itemVariants = {
 
 export default function Services() {
     return (
-        <section id="services" className="py-24 bg-[#0a0a0a] relative overflow-hidden">
+        <section id="services" className="py-24 bg-[#FAF8F3] relative overflow-hidden">
             {/* Background decorations */}
-            <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent" />
-            <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent" />
+            <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#8B6F47]/30 to-transparent" />
+            <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#8B6F47]/30 to-transparent" />
 
-            <div className="absolute top-40 right-0 w-64 h-64 bg-gold/5 rounded-full blur-3xl" />
-            <div className="absolute bottom-40 left-0 w-64 h-64 bg-gold/5 rounded-full blur-3xl" />
+            <div className="absolute top-40 right-0 w-64 h-64 bg-[#8B6F47]/5 rounded-full blur-3xl" />
+            <div className="absolute bottom-40 left-0 w-64 h-64 bg-[#A0826D]/5 rounded-full blur-3xl" />
 
             <div className="container mx-auto px-6 relative z-10">
                 {/* Section Header */}
@@ -46,7 +46,7 @@ export default function Services() {
                     transition={{ duration: 0.6 }}
                     className="text-center mb-16"
                 >
-                    <span className="inline-block text-gold text-sm font-medium tracking-[0.3em] uppercase mb-4">
+                    <span className="inline-block text-[#8B6F47] text-sm font-medium tracking-[0.3em] uppercase mb-4">
                         Our Services
                     </span>
                     <h2 className="text-4xl md:text-5xl font-bold mb-6 font-[family-name:var(--font-heading)]">
@@ -71,22 +71,22 @@ export default function Services() {
                         <Link key={service.id} href={`/services/${service.slug}`}>
                             <motion.div
                                 variants={itemVariants as any}
-                                className="service-card group relative bg-[#111111] border border-[#1a1a1a] p-6 rounded-sm hover:border-gold/30 transition-all duration-500 cursor-pointer"
+                                className="service-card group relative bg-white border border-[#E8DDD0] p-6 rounded-sm hover:border-[#8B6F47]/30 transition-all duration-500 cursor-pointer shadow-sm hover:shadow-md"
                             >
                                 {/* Popular badge */}
                                 {service.popular && (
-                                    <div className="absolute -top-3 right-4 bg-gold text-black text-xs font-bold px-3 py-1 rounded-sm">
+                                    <div className="absolute -top-3 right-4 bg-[#8B6F47] text-white text-xs font-bold px-3 py-1 rounded-sm">
                                         Popular
                                     </div>
                                 )}
 
                                 {/* Icon */}
-                                <div className="w-14 h-14 bg-gold/10 rounded-sm flex items-center justify-center mb-5 group-hover:bg-gold/20 transition-colors duration-300">
-                                    <service.icon className="w-7 h-7 text-gold" />
+                                <div className="w-14 h-14 bg-[#8B6F47]/10 rounded-sm flex items-center justify-center mb-5 group-hover:bg-[#8B6F47]/20 transition-colors duration-300">
+                                    <service.icon className="w-7 h-7 text-[#8B6F47]" />
                                 </div>
 
                                 {/* Content */}
-                                <h3 className="text-xl font-semibold mb-3 text-foreground font-[family-name:var(--font-heading)] group-hover:text-gold transition-colors duration-300">
+                                <h3 className="text-xl font-semibold mb-3 text-foreground font-[family-name:var(--font-heading)] group-hover:text-[#8B6F47] transition-colors duration-300">
                                     {service.title}
                                 </h3>
                                 <p className="text-muted-foreground text-sm mb-4 leading-relaxed">
@@ -94,15 +94,15 @@ export default function Services() {
                                 </p>
 
                                 {/* Price & CTA */}
-                                <div className="flex items-center justify-between mt-auto pt-4 border-t border-[#1a1a1a]">
-                                    <span className="text-gold font-semibold">{service.price}</span>
-                                    <span className="text-muted-foreground hover:text-gold transition-colors font-medium text-sm">
+                                <div className="flex items-center justify-between mt-auto pt-4 border-t border-[#E8DDD0]">
+                                    <span className="text-[#8B6F47] font-semibold">{service.price}</span>
+                                    <span className="text-muted-foreground hover:text-[#8B6F47] transition-colors font-medium text-sm">
                                         Learn More →
                                     </span>
                                 </div>
 
                                 {/* Hover accent */}
-                                <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-gold group-hover:w-full transition-all duration-500" />
+                                <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#8B6F47] group-hover:w-full transition-all duration-500" />
                             </motion.div>
                         </Link>
                     ))}
@@ -119,8 +119,8 @@ export default function Services() {
                     <Link href="/services">
                         <Button
                             size="lg"
-                            variant="outline"
-                            className="border-gold/30 text-gold hover:bg-gold hover:text-black px-8 py-6 rounded-none transition-all duration-300"
+                        variant="outline"
+                        className="border-[#8B6F47]/30 text-[#8B6F47] hover:bg-[#8B6F47] hover:text-white px-8 py-6 rounded-none transition-all duration-300"
                         >
                             View All Services
                         </Button>

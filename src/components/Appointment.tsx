@@ -6,18 +6,18 @@ import { Button } from "@/components/ui/button";
 
 export default function Appointment() {
   return (
-    <section className="py-24 bg-[#0d0d0d] relative overflow-hidden">
+    <section className="py-24 bg-[#F5F0E8] relative overflow-hidden">
       {/* Background decorations */}
       <div className="absolute inset-0">
-        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent" />
-        <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent" />
+        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#8B6F47]/30 to-transparent" />
+        <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#8B6F47]/30 to-transparent" />
         
-        {/* Gold gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-gold/5 via-transparent to-gold/5" />
+        {/* Wooden gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#8B6F47]/5 via-transparent to-[#8B6F47]/5" />
         
         {/* Decorative circles */}
-        <div className="absolute top-1/2 left-1/4 w-96 h-96 bg-gold/5 rounded-full blur-3xl -translate-y-1/2" />
-        <div className="absolute top-1/2 right-1/4 w-96 h-96 bg-gold/5 rounded-full blur-3xl -translate-y-1/2" />
+        <div className="absolute top-1/2 left-1/4 w-96 h-96 bg-[#8B6F47]/5 rounded-full blur-3xl -translate-y-1/2" />
+        <div className="absolute top-1/2 right-1/4 w-96 h-96 bg-[#A0826D]/5 rounded-full blur-3xl -translate-y-1/2" />
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
@@ -30,9 +30,9 @@ export default function Appointment() {
             className="text-center"
           >
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 bg-gold/10 border border-gold/20 rounded-full px-4 py-2 mb-6">
-              <Sparkles className="w-4 h-4 text-gold" />
-              <span className="text-sm text-gold font-medium">Quick Appointment</span>
+            <div className="inline-flex items-center gap-2 bg-[#8B6F47]/10 border border-[#8B6F47]/20 rounded-full px-4 py-2 mb-6">
+              <Sparkles className="w-4 h-4 text-[#8B6F47]" />
+              <span className="text-sm text-[#8B6F47] font-medium">Quick Appointment</span>
             </div>
 
             {/* Heading */}
@@ -52,15 +52,15 @@ export default function Appointment() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="inline-block bg-[#111111] border border-gold/30 rounded-sm p-8 mb-10 gold-glow"
+              className="inline-block bg-white border border-[#8B6F47]/30 rounded-sm p-8 mb-10 shadow-lg"
             >
               <div className="flex items-center justify-center gap-4 mb-4">
-                <div className="w-14 h-14 bg-gold rounded-full flex items-center justify-center">
-                  <Phone className="w-7 h-7 text-black" />
+                <div className="w-14 h-14 bg-[#8B6F47] rounded-full flex items-center justify-center">
+                  <Phone className="w-7 h-7 text-white" />
                 </div>
                 <div className="text-left">
                   <p className="text-sm text-muted-foreground mb-1">Call us now</p>
-                  <p className="text-3xl md:text-4xl font-bold text-gold font-[family-name:var(--font-heading)]">
+                  <p className="text-3xl md:text-4xl font-bold text-[#8B6F47] font-[family-name:var(--font-heading)]">
                     +1 331-901-2020
                   </p>
                 </div>
@@ -71,7 +71,7 @@ export default function Appointment() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
                 size="lg"
-                className="bg-gold hover:bg-gold-light text-black font-semibold px-10 py-6 rounded-none group transition-all duration-300 hover:shadow-xl hover:shadow-gold/20"
+                className="bg-[#8B6F47] hover:bg-[#A0826D] text-white font-semibold px-10 py-6 rounded-none group transition-all duration-300 hover:shadow-xl hover:shadow-[#8B6F47]/20"
               >
                 <Calendar className="mr-2 w-5 h-5" />
                 Book Online
@@ -79,7 +79,7 @@ export default function Appointment() {
               <Button
                 size="lg"
                 variant="outline"
-                className="border-gold/30 text-gold hover:bg-gold/10 px-10 py-6 rounded-none transition-all duration-300"
+                className="border-[#8B6F47]/30 text-[#8B6F47] hover:bg-[#8B6F47]/10 px-10 py-6 rounded-none transition-all duration-300"
               >
                 <Clock className="mr-2 w-5 h-5" />
                 View Schedule

@@ -15,12 +15,12 @@ export default function ServiceDetail({ slug }: ServiceDetailProps) {
 
     if (!service) {
         return (
-            <div className="min-h-screen bg-[#0a0a0a] flex items-center justify-center">
+            <div className="min-h-screen bg-[#FAF8F3] flex items-center justify-center">
                 <div className="text-center">
                     <h1 className="text-4xl font-bold text-foreground mb-4">Service Not Found</h1>
                     <p className="text-muted-foreground mb-8">The service you're looking for doesn't exist.</p>
                     <Link href="/services">
-                        <Button className="bg-gold hover:bg-gold-light text-black">
+                        <Button className="bg-[#8B6F47] hover:bg-[#A0826D] text-white">
                             Back to Services
                         </Button>
                     </Link>
@@ -29,12 +29,12 @@ export default function ServiceDetail({ slug }: ServiceDetailProps) {
         );
     }
     return (
-        <div className="min-h-screen bg-[#0a0a0a]">
+        <div className="min-h-screen bg-[#FAF8F3]">
             {/* Hero Section */}
-            <section className="pt-32 pb-16 bg-gradient-to-b from-[#0a0a0a] to-[#0d0d0d] relative overflow-hidden">
+            <section className="pt-32 pb-16 bg-gradient-to-b from-[#FAF8F3] to-[#F5F0E8] relative overflow-hidden">
                 <div className="absolute inset-0">
-                    <div className="absolute top-20 left-10 w-72 h-72 bg-gold/5 rounded-full blur-3xl" />
-                    <div className="absolute bottom-20 right-10 w-96 h-96 bg-gold/5 rounded-full blur-3xl" />
+                    <div className="absolute top-20 left-10 w-72 h-72 bg-[#8B6F47]/5 rounded-full blur-3xl" />
+                    <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#A0826D]/5 rounded-full blur-3xl" />
                 </div>
 
                 <div className="container mx-auto px-6 relative z-10">
@@ -64,11 +64,11 @@ export default function ServiceDetail({ slug }: ServiceDetailProps) {
                     >
                         {/* Category & Popular Badge */}
                         <div className="flex items-center gap-4 mb-6">
-                            <span className="text-gold text-sm font-medium tracking-[0.2em] uppercase">
+                            <span className="text-[#8B6F47] text-sm font-medium tracking-[0.2em] uppercase">
                                 {service.category}
                             </span>
                             {service.popular && (
-                                <span className="bg-gold text-black text-xs font-bold px-3 py-1 rounded-sm">
+                                <span className="bg-[#8B6F47] text-white text-xs font-bold px-3 py-1 rounded-sm">
                                     Popular
                                 </span>
                             )}
@@ -76,8 +76,8 @@ export default function ServiceDetail({ slug }: ServiceDetailProps) {
 
                         {/* Title */}
                         <div className="flex items-start gap-6 mb-6">
-                            <div className="w-20 h-20 bg-gold/10 rounded-sm flex items-center justify-center flex-shrink-0">
-                                <service.icon className="w-10 h-10 text-gold" />
+                            <div className="w-20 h-20 bg-[#8B6F47]/10 rounded-sm flex items-center justify-center flex-shrink-0">
+                                <service.icon className="w-10 h-10 text-[#8B6F47]" />
                             </div>
                             <div>
                                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 font-[family-name:var(--font-heading)]">
@@ -85,10 +85,10 @@ export default function ServiceDetail({ slug }: ServiceDetailProps) {
                                 </h1>
                                 <div className="flex items-center gap-6 text-muted-foreground">
                                     <div className="flex items-center gap-2">
-                                        <span className="text-2xl font-bold text-gold">{service.price}</span>
+                                        <span className="text-2xl font-bold text-[#8B6F47]">{service.price}</span>
                                     </div>
                                     <div className="flex items-center gap-2">
-                                        <Clock className="w-4 h-4 text-gold" />
+                                        <Clock className="w-4 h-4 text-[#8B6F47]" />
                                         <span>{service.duration}</span>
                                     </div>
                                 </div>
@@ -105,7 +105,7 @@ export default function ServiceDetail({ slug }: ServiceDetailProps) {
 
             {/* Features & Benefits */}
             <section className="py-24 relative overflow-hidden">
-                <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent" />
+                <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#8B6F47]/30 to-transparent" />
 
                 <div className="container mx-auto px-6 relative z-10">
                     <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
@@ -128,9 +128,9 @@ export default function ServiceDetail({ slug }: ServiceDetailProps) {
                                         whileInView={{ opacity: 1, x: 0 }}
                                         viewport={{ once: true }}
                                         transition={{ delay: index * 0.1 }}
-                                        className="flex items-start gap-3 bg-[#111111] border border-[#1a1a1a] p-4 rounded-sm hover:border-gold/30 transition-colors"
-                                    >
-                                        <Check className="w-5 h-5 text-gold flex-shrink-0 mt-0.5" />
+                    className="flex items-start gap-3 bg-white border border-[#E8DDD0] p-4 rounded-sm hover:border-[#8B6F47]/30 transition-colors shadow-sm"
+                  >
+                    <Check className="w-5 h-5 text-[#8B6F47] flex-shrink-0 mt-0.5" />
                                         <span className="text-foreground">{feature}</span>
                                     </motion.div>
                                 ))}
@@ -156,9 +156,9 @@ export default function ServiceDetail({ slug }: ServiceDetailProps) {
                                         whileInView={{ opacity: 1, x: 0 }}
                                         viewport={{ once: true }}
                                         transition={{ delay: index * 0.1 }}
-                                        className="flex items-start gap-3 bg-[#111111] border border-[#1a1a1a] p-4 rounded-sm hover:border-gold/30 transition-colors"
-                                    >
-                                        <Star className="w-5 h-5 text-gold fill-gold flex-shrink-0 mt-0.5" />
+                    className="flex items-start gap-3 bg-white border border-[#E8DDD0] p-4 rounded-sm hover:border-[#8B6F47]/30 transition-colors shadow-sm"
+                  >
+                    <Star className="w-5 h-5 text-[#8B6F47] fill-[#8B6F47] flex-shrink-0 mt-0.5" />
                                         <span className="text-foreground">{benefit}</span>
                                     </motion.div>
                                 ))}
@@ -169,8 +169,8 @@ export default function ServiceDetail({ slug }: ServiceDetailProps) {
             </section>
 
             {/* CTA Section */}
-            <section className="py-24 bg-[#0d0d0d] relative overflow-hidden">
-                <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent" />
+            <section className="py-24 bg-[#F5F0E8] relative overflow-hidden">
+                <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#8B6F47]/30 to-transparent" />
 
                 <div className="container mx-auto px-6">
                     <motion.div
@@ -190,7 +190,7 @@ export default function ServiceDetail({ slug }: ServiceDetailProps) {
                             <Link href="/#contact">
                                 <Button
                                     size="lg"
-                                    className="bg-gold hover:bg-gold-light text-black font-semibold px-10 py-6 rounded-none transition-all duration-300 hover:shadow-lg hover:shadow-gold/20"
+                                    className="bg-[#8B6F47] hover:bg-[#A0826D] text-white font-semibold px-10 py-6 rounded-none transition-all duration-300 hover:shadow-lg hover:shadow-[#8B6F47]/20"
                                 >
                                     Book Now
                                 </Button>
@@ -199,7 +199,7 @@ export default function ServiceDetail({ slug }: ServiceDetailProps) {
                                 <Button
                                     size="lg"
                                     variant="outline"
-                                    className="border-gold/30 text-gold hover:bg-gold/10 px-10 py-6 rounded-none transition-all duration-300"
+                                    className="border-[#8B6F47]/30 text-[#8B6F47] hover:bg-[#8B6F47]/10 px-10 py-6 rounded-none transition-all duration-300"
                                 >
                                     View All Services
                                 </Button>

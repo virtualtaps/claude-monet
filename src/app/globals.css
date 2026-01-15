@@ -68,47 +68,50 @@
 
 :root {
   --radius: 0.625rem;
-  /* Premium Dark Theme - Black & Gold */
-  --background: #0a0a0a;
-  --foreground: #fafafa;
-  --card: #111111;
-  --card-foreground: #fafafa;
-  --popover: #111111;
-  --popover-foreground: #fafafa;
-  --primary: #d4af37;
-  --primary-foreground: #0a0a0a;
-  --secondary: #1a1a1a;
-  --secondary-foreground: #fafafa;
-  --muted: #1a1a1a;
-  --muted-foreground: #a1a1a1;
-  --accent: #d4af37;
-  --accent-foreground: #0a0a0a;
-  --destructive: #ef4444;
-  --border: #262626;
-  --input: #262626;
-  --ring: #d4af37;
+  /* Light Wooden/Beige Theme */
+  --background: #FAF8F3;
+  --foreground: #3A2E1F;
+  --card: #FFFFFF;
+  --card-foreground: #3A2E1F;
+  --popover: #FFFFFF;
+  --popover-foreground: #3A2E1F;
+  --primary: #8B6F47;
+  --primary-foreground: #FFFFFF;
+  --secondary: #E8DDD0;
+  --secondary-foreground: #3A2E1F;
+  --muted: #F5F0E8;
+  --muted-foreground: #6B5D4F;
+  --accent: #A0826D;
+  --accent-foreground: #FFFFFF;
+  --destructive: #DC2626;
+  --border: #E8DDD0;
+  --input: #E8DDD0;
+  --ring: #8B6F47;
   
-  /* Gold variations */
-  --gold: #d4af37;
-  --gold-light: #f4d03f;
-  --gold-dark: #b8960c;
+  /* Wooden color variations */
+  --wood: #8B6F47;
+  --wood-light: #A0826D;
+  --wood-dark: #6B5D4F;
+  --beige: #F5F0E8;
+  --beige-light: #FAF8F3;
+  --beige-dark: #E8DDD0;
   
   /* Chart colors */
-  --chart-1: #d4af37;
-  --chart-2: #f4d03f;
-  --chart-3: #b8960c;
-  --chart-4: #8b7355;
-  --chart-5: #c9a227;
+  --chart-1: #8B6F47;
+  --chart-2: #A0826D;
+  --chart-3: #C19A6B;
+  --chart-4: #6B5D4F;
+  --chart-5: #D4A574;
   
   /* Sidebar */
-  --sidebar: #0a0a0a;
-  --sidebar-foreground: #fafafa;
-  --sidebar-primary: #d4af37;
-  --sidebar-primary-foreground: #0a0a0a;
-  --sidebar-accent: #1a1a1a;
-  --sidebar-accent-foreground: #fafafa;
-  --sidebar-border: #262626;
-  --sidebar-ring: #d4af37;
+  --sidebar: #FAF8F3;
+  --sidebar-foreground: #3A2E1F;
+  --sidebar-primary: #8B6F47;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #E8DDD0;
+  --sidebar-accent-foreground: #3A2E1F;
+  --sidebar-border: #E8DDD0;
+  --sidebar-ring: #8B6F47;
 }
 
 @layer base {
@@ -131,16 +134,16 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #0a0a0a;
+  background: #F5F0E8;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #d4af37;
+  background: #8B6F47;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #f4d03f;
+  background: #A0826D;
 }
 
 /* Smooth scroll */
@@ -148,17 +151,17 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Gold gradient text */
+/* Wooden gradient text */
 .text-gold-gradient {
-  background: linear-gradient(135deg, #f4d03f 0%, #d4af37 50%, #b8960c 100%);
+  background: linear-gradient(135deg, #A0826D 0%, #8B6F47 50%, #6B5D4F 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-/* Gold border glow */
+/* Wooden border glow */
 .gold-glow {
-  box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+  box-shadow: 0 0 20px rgba(139, 111, 71, 0.2);
 }
 
 /* Animated underline */
@@ -173,7 +176,7 @@ html {
   height: 2px;
   bottom: -2px;
   left: 0;
-  background: linear-gradient(90deg, #d4af37, #f4d03f);
+  background: linear-gradient(90deg, #8B6F47, #A0826D);
   transition: width 0.3s ease;
 }
 
@@ -188,14 +191,14 @@ html {
 
 .service-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(212, 175, 55, 0.15);
+  box-shadow: 0 20px 40px rgba(139, 111, 71, 0.15);
 }
 
 /* Background patterns */
 .bg-pattern {
   background-image: 
-    radial-gradient(circle at 25% 25%, rgba(212, 175, 55, 0.03) 0%, transparent 50%),
-    radial-gradient(circle at 75% 75%, rgba(212, 175, 55, 0.03) 0%, transparent 50%);
+    radial-gradient(circle at 25% 25%, rgba(139, 111, 71, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(160, 130, 109, 0.05) 0%, transparent 50%);
 }
 
 /* Diagonal lines pattern */
@@ -204,7 +207,7 @@ html {
     45deg,
     transparent,
     transparent 10px,
-    rgba(212, 175, 55, 0.03) 10px,
-    rgba(212, 175, 55, 0.03) 11px
+    rgba(139, 111, 71, 0.05) 10px,
+    rgba(139, 111, 71, 0.05) 11px
   );
 }

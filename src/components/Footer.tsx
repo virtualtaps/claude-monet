@@ -43,9 +43,9 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-[#0d0d0d] relative overflow-hidden">
+    <footer className="bg-[#F5F0E8] relative overflow-hidden">
       {/* Top border */}
-      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent" />
+      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#8B6F47]/30 to-transparent" />
 
       {/* Main Footer Content */}
       <div className="container mx-auto px-6 py-16">
@@ -83,9 +83,9 @@ export default function Footer() {
                   key={social.label}
                   href={social.href}
                   aria-label={social.label}
-                  className="w-10 h-10 bg-[#1a1a1a] border border-[#262626] rounded-sm flex items-center justify-center hover:bg-gold hover:border-gold group transition-all duration-300"
+                  className="w-10 h-10 bg-white border border-[#E8DDD0] rounded-sm flex items-center justify-center hover:bg-[#8B6F47] hover:border-[#8B6F47] group transition-all duration-300"
                 >
-                  <social.icon className="w-5 h-5 text-muted-foreground group-hover:text-black transition-colors" />
+                  <social.icon className="w-5 h-5 text-muted-foreground group-hover:text-white transition-colors" />
                 </a>
               ))}
             </div>
@@ -101,7 +101,7 @@ export default function Footer() {
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-muted-foreground hover:text-gold transition-colors duration-300 text-sm"
+                    className="text-muted-foreground hover:text-[#8B6F47] transition-colors duration-300 text-sm"
                   >
                     {link.name}
                   </Link>
@@ -120,7 +120,7 @@ export default function Footer() {
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-muted-foreground hover:text-gold transition-colors duration-300 text-sm"
+                    className="text-muted-foreground hover:text-[#8B6F47] transition-colors duration-300 text-sm"
                   >
                     {link.name}
                   </Link>
@@ -148,17 +148,17 @@ export default function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-[#1a1a1a]">
+      <div className="border-t border-[#E8DDD0]">
         <div className="container mx-auto px-6 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-muted-foreground text-sm text-center md:text-left">
               © 2025 Claude Monet Salon & Spa. All rights reserved.
             </p>
             <div className="flex items-center gap-6 text-sm">
-              <Link href="#" className="text-muted-foreground hover:text-gold transition-colors">
+              <Link href="#" className="text-muted-foreground hover:text-[#8B6F47] transition-colors">
                 Privacy Policy
               </Link>
-              <Link href="#" className="text-muted-foreground hover:text-gold transition-colors">
+              <Link href="#" className="text-muted-foreground hover:text-[#8B6F47] transition-colors">
                 Terms of Service
               </Link>
             </div>
@@ -171,7 +171,7 @@ export default function Footer() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         onClick={scrollToTop}
-        className="fixed bottom-8 right-8 w-12 h-12 bg-gold text-black rounded-sm flex items-center justify-center shadow-lg shadow-gold/20 hover:bg-gold-light transition-colors duration-300 z-50"
+        className="fixed bottom-8 right-8 w-12 h-12 bg-[#8B6F47] text-white rounded-sm flex items-center justify-center shadow-lg shadow-[#8B6F47]/20 hover:bg-[#A0826D] transition-colors duration-300 z-50"
         aria-label="Scroll to top"
       >
         <ArrowUp className="w-5 h-5" />

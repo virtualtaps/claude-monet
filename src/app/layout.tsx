@@ -28,11 +28,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en">
       <body
         className={`${nunitoSans.variable} ${albertSans.variable} antialiased`}
       >
-        <div className="min-h-screen bg-[#0a0a0a] flex flex-col">
+        <div className="min-h-screen bg-[#FAF8F3] flex flex-col">
           <Navbar />
           <main className="flex-1">
             {children}
