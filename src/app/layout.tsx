@@ -3,6 +3,8 @@ import { Nunito_Sans, Albert_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { BookingProvider } from "@/contexts/BookingContext";
+import BookingDialog from "@/components/BookingDialog";
 
 const nunitoSans = Nunito_Sans({
   variable: "--font-body",
@@ -32,13 +34,16 @@ export default function RootLayout({
       <body
         className={`${nunitoSans.variable} ${albertSans.variable} antialiased`}
       >
-        <div className="min-h-screen bg-[#FAF8F3] flex flex-col">
-          <Navbar />
-          <main className="flex-1">
-            {children}
-          </main>
-          <Footer />
-        </div>
+        <BookingProvider>
+          <div className="min-h-screen bg-[#FAF8F3] flex flex-col">
+            <Navbar />
+            <main className="flex-1">
+              {children}
+            </main>
+            <Footer />
+            <BookingDialog />
+          </div>
+        </BookingProvider>
       </body>
     </html>
   );

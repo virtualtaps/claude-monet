@@ -5,6 +5,7 @@ import { ArrowLeft, Clock, Check, Star } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { getServiceBySlug } from "@/data/services";
+import { useBooking } from "@/contexts/BookingContext";
 
 interface ServiceDetailProps {
     slug: string;
@@ -187,14 +188,13 @@ export default function ServiceDetail({ slug }: ServiceDetailProps) {
                             Book your appointment today and let our expert team transform your look.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                            <Link href="/#contact">
-                                <Button
-                                    size="lg"
-                                    className="bg-[#8B6F47] hover:bg-[#A0826D] text-white font-semibold px-10 py-6 rounded-none transition-all duration-300 hover:shadow-lg hover:shadow-[#8B6F47]/20"
-                                >
-                                    Book Now
-                                </Button>
-                            </Link>
+                            <Button
+                                size="lg"
+                                onClick={openDialog}
+                                className="bg-[#8B6F47] hover:bg-[#A0826D] text-white font-semibold px-10 py-6 rounded-none transition-all duration-300 hover:shadow-lg hover:shadow-[#8B6F47]/20"
+                            >
+                                Book Now
+                            </Button>
                             <Link href="/services">
                                 <Button
                                     size="lg"

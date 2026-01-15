@@ -15,20 +15,23 @@ const contactInfo = [
   {
     icon: MapPin,
     title: "Visit Us",
-    content: "2380 S Eola Road, Aurora, Illinois, 60503",
-    subContent: "Suite #110",
+    content: "P5 Floor, Swissotel Corniche Park Towers, Doha",
+    subContent: "Qatar",
+    link: "https://maps.app.goo.gl/JQmUz8wcBMvqZJQN9?g_st=ic",
   },
   {
     icon: Phone,
     title: "Call Us",
     content: "+1 331-901-2020",
     subContent: "For same day booking",
+    link: "tel:+13319012020",
   },
   {
     icon: Mail,
     title: "Email Us",
     content: "claudemonetsalon@gmail.com",
     subContent: "We respond within 24 hours",
+    link: "mailto:claudemonetsalon@gmail.com",
   },
 ];
 
@@ -55,7 +58,7 @@ export default function Contact() {
             <span className="text-gold-gradient">Salon</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-            We'd love to welcome you to our luxurious salon. Stop by for a consultation 
+            We'd love to welcome you to our luxurious salon. Stop by for a consultation
             or book your appointment today.
           </p>
         </motion.div>
@@ -71,13 +74,16 @@ export default function Contact() {
             {/* Contact Cards */}
             <div className="space-y-4 mb-8">
               {contactInfo.map((item, index) => (
-                <motion.div
+                <motion.a
                   key={item.title}
+                  href={item.link}
+                  target={item.link.startsWith("http") ? "_blank" : undefined}
+                  rel={item.link.startsWith("http") ? "noopener noreferrer" : undefined}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="bg-white border border-[#E8DDD0] p-5 rounded-sm hover:border-[#8B6F47]/30 transition-all duration-300 group shadow-sm"
+                  className="bg-white border border-[#E8DDD0] p-5 rounded-sm hover:border-[#8B6F47]/30 transition-all duration-300 group shadow-sm block"
                 >
                   <div className="flex items-start gap-4">
                     <div className="w-12 h-12 bg-[#8B6F47]/10 rounded-sm flex items-center justify-center flex-shrink-0 group-hover:bg-[#8B6F47]/20 transition-colors">
@@ -91,7 +97,7 @@ export default function Contact() {
                       <p className="text-sm text-muted-foreground">{item.subContent}</p>
                     </div>
                   </div>
-                </motion.div>
+                </motion.a>
               ))}
             </div>
 
@@ -135,7 +141,7 @@ export default function Contact() {
                 {/* Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-br from-[#F5F0E8]/80 to-[#FAF8F3]/80" />
               </div>
-              
+
               {/* Location marker */}
               <div className="absolute inset-0 flex items-center justify-center z-10">
                 <motion.div
@@ -152,12 +158,19 @@ export default function Contact() {
 
               {/* Get Directions button */}
               <div className="absolute bottom-6 left-6 right-6 z-10">
-                <Button
-                  className="w-full bg-[#8B6F47] hover:bg-[#A0826D] text-white font-semibold py-5 rounded-none transition-all duration-300"
+                <a
+                  href="https://maps.app.goo.gl/JQmUz8wcBMvqZJQN9?g_st=ic"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block w-full"
                 >
-                  <Navigation className="mr-2 w-5 h-5" />
-                  Get Directions
-                </Button>
+                  <Button
+                    className="w-full bg-[#8B6F47] hover:bg-[#A0826D] text-white font-semibold py-5 rounded-none transition-all duration-300"
+                  >
+                    <Navigation className="mr-2 w-5 h-5" />
+                    Get Directions
+                  </Button>
+                </a>
               </div>
             </div>
           </motion.div>

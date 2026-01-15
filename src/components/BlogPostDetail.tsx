@@ -5,6 +5,7 @@ import { ArrowLeft, Calendar, Clock, Share2 } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import { useBooking } from "@/contexts/BookingContext";
 
 interface BlogPost {
   slug: string;
@@ -21,6 +22,8 @@ interface BlogPostDetailProps {
 }
 
 export default function BlogPostDetail({ post }: BlogPostDetailProps) {
+  const { openDialog } = useBooking();
+
   return (
     <div className="min-h-screen bg-[#FAF8F3]">
       {/* Hero Section */}
@@ -178,14 +181,13 @@ export default function BlogPostDetail({ post }: BlogPostDetailProps) {
               Book your appointment today and let our expert team transform your look.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/#contact">
-                <Button
-                  size="lg"
-                  className="bg-[#8B6F47] hover:bg-[#A0826D] text-white font-semibold px-10 py-6 rounded-none transition-all duration-300 hover:shadow-lg hover:shadow-[#8B6F47]/20"
-                >
-                  Book Appointment
-                </Button>
-              </Link>
+              <Button
+                size="lg"
+                onClick={openDialog}
+                className="bg-[#8B6F47] hover:bg-[#A0826D] text-white font-semibold px-10 py-6 rounded-none transition-all duration-300 hover:shadow-lg hover:shadow-[#8B6F47]/20"
+              >
+                Book Appointment
+              </Button>
               <Link href="/blog">
                 <Button
                   size="lg"

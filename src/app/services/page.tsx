@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { services } from "@/data/services";
+import { useBooking } from "@/contexts/BookingContext";
 
 const containerVariants = {
     hidden: { opacity: 0 },
@@ -28,6 +29,8 @@ const itemVariants = {
 };
 
 export default function ServicesPage() {
+    const { openDialog } = useBooking();
+
     return (
         <div className="min-h-screen bg-[#FAF8F3]">
             {/* Hero Section */}
@@ -141,15 +144,7 @@ export default function ServicesPage() {
                                     Get In Touch
                                 </Button>
                             </Link>
-                            <Link href="/#appointment">
-                                <Button
-                                    size="lg"
-                                    variant="outline"
-                                    className="border-[#8B6F47]/30 text-[#8B6F47] hover:bg-[#8B6F47]/10 px-8 py-6 rounded-none transition-all duration-300"
-                                >
-                                    Book Appointment
-                                </Button>
-                            </Link>
+
                         </div>
                     </motion.div>
                 </div>

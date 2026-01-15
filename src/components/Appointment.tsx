@@ -3,8 +3,10 @@
 import { motion } from "framer-motion";
 import { Phone, Calendar, Clock, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useBooking } from "@/contexts/BookingContext";
 
 export default function Appointment() {
+  const { openDialog } = useBooking();
   return (
     <section className="py-24 bg-[#F5F0E8] relative overflow-hidden">
       {/* Background decorations */}
@@ -71,6 +73,7 @@ export default function Appointment() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
                 size="lg"
+                onClick={openDialog}
                 className="bg-[#8B6F47] hover:bg-[#A0826D] text-white font-semibold px-10 py-6 rounded-none group transition-all duration-300 hover:shadow-xl hover:shadow-[#8B6F47]/20"
               >
                 <Calendar className="mr-2 w-5 h-5" />

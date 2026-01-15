@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet";
 import Image from "next/image";
 import Link from "next/link";
+import { useBooking } from "@/contexts/BookingContext";
 
 const navLinks = [
   { name: "Services", href: "/services" },
@@ -20,6 +21,7 @@ const navLinks = [
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const { openDialog } = useBooking();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -51,11 +53,10 @@ export default function Navbar() {
       <motion.nav
         initial={{ y: -100 }}
         animate={{ y: 0 }}
-        className={`sticky top-0 z-50 transition-all duration-500 ${
-          scrolled
-            ? "bg-[#FAF8F3]/95 backdrop-blur-lg shadow-lg shadow-[#8B6F47]/10"
-            : "bg-[#FAF8F3]/90 backdrop-blur-sm"
-        }`}
+        className={`sticky top-0 z-50 transition-all duration-500 ${scrolled
+          ? "bg-[#FAF8F3]/95 backdrop-blur-lg shadow-lg shadow-[#8B6F47]/10"
+          : "bg-[#FAF8F3]/90 backdrop-blur-sm"
+          }`}
       >
         <div className="container mx-auto px-4 sm:px-6">
           <div className="flex items-center justify-between h-16 sm:h-20">
@@ -96,6 +97,7 @@ export default function Navbar() {
             {/* CTA Button */}
             <div className="hidden lg:flex items-center gap-4">
               <Button
+                onClick={openDialog}
                 className="bg-[#8B6F47] hover:bg-[#A0826D] text-white font-semibold px-6 py-5 rounded-none transition-all duration-300 hover:shadow-lg hover:shadow-[#8B6F47]/20"
               >
                 Book Now
@@ -105,10 +107,10 @@ export default function Navbar() {
             {/* Mobile Menu */}
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
               <SheetTrigger asChild className="lg:hidden">
-                <Button 
-                variant="ghost"
-                size="icon"
-                className="text-[#8B6F47] hover:bg-[#8B6F47]/10 h-10 w-10"
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="text-[#8B6F47] hover:bg-[#8B6F47]/10 h-10 w-10"
                   aria-label="Open navigation menu"
                 >
                   <Menu className="w-6 h-6" />
@@ -173,9 +175,12 @@ export default function Navbar() {
                         <span className="text-sm">Mon-Fri: 10 AM - 7 PM</span>
                       </div>
                     </div>
-                    <Button 
+                    <Button
                       className="w-full bg-[#8B6F47] hover:bg-[#A0826D] text-white font-semibold py-6 rounded-none transition-all duration-300"
-                      onClick={() => setIsOpen(false)}
+                      onClick={() => {
+                        setIsOpen(false);
+                        openDialog();
+                      }}
                     >
                       Book Now
                     </Button>

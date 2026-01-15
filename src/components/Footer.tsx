@@ -7,18 +7,18 @@ import Link from "next/link";
 
 const footerLinks = {
   services: [
-    { name: "Hair Styling", href: "#" },
-    { name: "Nail Services", href: "#" },
-    { name: "Lash Extensions", href: "#" },
-    { name: "Makeup", href: "#" },
-    { name: "Electrolysis", href: "#" },
+    { name: "Hair Styling", href: "/services/hair-styling" },
+    { name: "Russian Manicure", href: "/services/russian-manicure" },
+    { name: "Lash Services", href: "/services/lash-services" },
+    { name: "Make Up", href: "/services/makeup" },
+    { name: "Men's Grooming", href: "/services/mens-grooming" },
   ],
   company: [
-    { name: "About Us", href: "#about" },
-    { name: "Our Team", href: "#specialists" },
-    { name: "Gallery", href: "#gallery" },
-    { name: "Blog", href: "#blog" },
-    { name: "Careers", href: "#" },
+    { name: "About Us", href: "/#about" },
+    { name: "Our Team", href: "/#specialists" },
+    { name: "Gallery", href: "/gallery" },
+    { name: "Blog", href: "/blog" },
+    { name: "Contact", href: "/#contact" },
   ],
   brands: [
     { name: "Matrix" },
@@ -118,12 +118,21 @@ export default function Footer() {
             <ul className="space-y-3">
               {footerLinks.company.map((link) => (
                 <li key={link.name}>
-                  <Link
-                    href={link.href}
-                    className="text-muted-foreground hover:text-[#8B6F47] transition-colors duration-300 text-sm"
-                  >
-                    {link.name}
-                  </Link>
+                  {link.href.startsWith("/#") ? (
+                    <a
+                      href={link.href}
+                      className="text-muted-foreground hover:text-[#8B6F47] transition-colors duration-300 text-sm"
+                    >
+                      {link.name}
+                    </a>
+                  ) : (
+                    <Link
+                      href={link.href}
+                      className="text-muted-foreground hover:text-[#8B6F47] transition-colors duration-300 text-sm"
+                    >
+                      {link.name}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>

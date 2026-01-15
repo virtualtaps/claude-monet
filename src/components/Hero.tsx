@@ -4,8 +4,12 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles, Star } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
+import { useBooking } from "@/contexts/BookingContext";
 
 export default function Hero() {
+  const { openDialog } = useBooking();
+
   return (
     <section className="relative min-h-[90vh] flex items-center overflow-hidden">
       {/* Background Image */}
@@ -55,6 +59,7 @@ export default function Hero() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <Button
                 size="lg"
+                onClick={openDialog}
                 className="bg-[#3A2E1F] hover:bg-[#6B5D4F] text-white font-semibold px-8 py-6 rounded-lg group transition-all duration-300 hover:shadow-xl shadow-lg"
               >
                 Book Appointment
@@ -62,17 +67,20 @@ export default function Hero() {
               </Button>
               <Button
                 size="lg"
+                asChild
                 className="bg-[#F5F0E8] hover:bg-[#E8DDD0] text-[#3A2E1F] font-semibold px-8 py-6 rounded-lg transition-all duration-300 hover:shadow-lg shadow-md"
               >
-                <a href="/services" className="w-full h-full block mb-4 text-inherit no-underline">View Services</a>
+                <Link href="/services">View Services</Link>
               </Button>
             </div>
+
+
 
             {/* Stats */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6 }}
+              transition={{ delay: 1.1 }}
               className="flex gap-8 mt-12 justify-center lg:justify-start"
             >
               {[
@@ -157,6 +165,7 @@ export default function Hero() {
 
       {/* Bottom gradient fade */}
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#FAF8F3] to-transparent" />
+
     </section>
   );
 }

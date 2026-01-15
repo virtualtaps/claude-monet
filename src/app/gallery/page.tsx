@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Expand } from "lucide-react";
 import { useState } from "react";
 import Image from "next/image";
+import { useBooking } from "@/contexts/BookingContext";
 
 const galleryItems = [
     { id: 1, category: "Hair", size: "large" },
@@ -24,6 +25,7 @@ const categories = ["All", "Hair", "Nails", "Makeup", "Lashes"];
 
 export default function GalleryPage() {
     const [activeCategory, setActiveCategory] = useState("All");
+    const { openDialog } = useBooking();
 
     const filteredItems =
         activeCategory === "All"
@@ -159,11 +161,12 @@ export default function GalleryPage() {
                             Book your appointment today and experience the Claude Monet difference.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                            <a href="/#contact">
-                                    <button className="bg-[#8B6F47] hover:bg-[#A0826D] text-white font-semibold px-10 py-6 rounded-none transition-all duration-300 hover:shadow-lg hover:shadow-[#8B6F47]/20">
-                                        Book Appointment
-                                    </button>
-                                </a>
+                            <button 
+                                onClick={openDialog}
+                                className="bg-[#8B6F47] hover:bg-[#A0826D] text-white font-semibold px-10 py-6 rounded-none transition-all duration-300 hover:shadow-lg hover:shadow-[#8B6F47]/20"
+                            >
+                                Book Appointment
+                            </button>
                                 <a href="/services">
                                     <button className="border border-[#8B6F47]/30 text-[#8B6F47] hover:bg-[#8B6F47]/10 px-10 py-6 rounded-none transition-all duration-300">
                                         View Services
